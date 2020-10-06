@@ -2,10 +2,37 @@ import React from 'react';
 import Fade from 'react-reveal/Fade';
 import Header from 'parts/Header';
 import Section from 'elements/Section';
-import HeroImage from 'assets/images/hero-image.png';
 import Clients from 'parts/Clients';
+import Feature from 'parts/Feature';
+import HeroImage from 'assets/images/hero-image.png';
+import FeatureTitle01 from 'assets/images/feature-tile-icon-01.svg';
+import FeatureTitle02 from 'assets/images/feature-tile-icon-02.svg';
+import FeatureTitle03 from 'assets/images/feature-tile-icon-03.svg';
 
 export default function Homepage() {
+  const Features = [
+    {
+      imgSrc: FeatureTitle01,
+      imgAlt: 'Feature tile icon 01',
+      title: 'Join With Me',
+      description:
+        'A pseudo-Latin text used in web design, layout, and printing in place of things to emphasise design.',
+    },
+    {
+      imgSrc: FeatureTitle02,
+      imgAlt: 'Feature tile icon 02',
+      title: 'Join With Me',
+      description:
+        'A pseudo-Latin text used in web design, layout, and printing in place of things to emphasise design.',
+    },
+    {
+      imgSrc: FeatureTitle03,
+      imgAlt: 'Feature tile icon 03',
+      title: 'Join With Me',
+      description:
+        'A pseudo-Latin text used in web design, layout, and printing in place of things to emphasise design.',
+    },
+  ];
   return (
     <div className="body-wrap">
       <Header></Header>
@@ -42,8 +69,20 @@ export default function Homepage() {
             </div>
           </div>
         </Section>
+        <Clients></Clients>
+        <section className="features-tiles">
+          <div className="container">
+            <div className="features-tiles-inner section-inner">
+              <div className="tiles-wrap">
+                <Feature
+                  delayInMS={2500}
+                  data={{ imgSrc: '', imgAlt: '', title: '', description: '' }}
+                ></Feature>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
-      <Clients></Clients>
     </div>
   );
 }
