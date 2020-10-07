@@ -1,8 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 
 export default function Card(props) {
-  const className = ['title-item'];
+  const className = ['tiles-item'];
   className.push(props.className);
   return (
     <div className={className.join(' ')}>
@@ -15,7 +15,7 @@ export default function Card(props) {
   );
 }
 
-Card.PropTypes = {
-  hasShadow: PropTypes.bool,
-  className: PropTypes.string,
+Card.propTypes = {
+  hasShadow: propTypes.bool,
+  className: propTypes.string,
 };
