@@ -10,7 +10,7 @@ import FeatureTitle02 from 'assets/images/feature-tile-icon-02.svg';
 import FeatureTitle03 from 'assets/images/feature-tile-icon-03.svg';
 
 export default function Homepage() {
-  const Features = [
+  const features = [
     {
       imgSrc: FeatureTitle01,
       imgAlt: 'Feature tile icon 01',
@@ -21,6 +21,13 @@ export default function Homepage() {
     {
       imgSrc: FeatureTitle02,
       imgAlt: 'Feature tile icon 02',
+      title: 'Join With Me',
+      description:
+        'A pseudo-Latin text used in web design, layout, and printing in place of things to emphasise design.',
+    },
+    {
+      imgSrc: FeatureTitle03,
+      imgAlt: 'Feature tile icon 03',
       title: 'Join With Me',
       description:
         'A pseudo-Latin text used in web design, layout, and printing in place of things to emphasise design.',
@@ -74,10 +81,13 @@ export default function Homepage() {
           <div className="container">
             <div className="features-tiles-inner section-inner">
               <div className="tiles-wrap">
-                <Feature
-                  delayInMS={2500}
-                  data={{ imgSrc: '', imgAlt: '', title: '', description: '' }}
-                ></Feature>
+                {features.map((feature, index) => (
+                  <Feature
+                    key={index}
+                    delayInMS={index * 500}
+                    data={feature}
+                  ></Feature>
+                ))}
               </div>
             </div>
           </div>
